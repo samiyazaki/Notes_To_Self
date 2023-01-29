@@ -1,5 +1,5 @@
 const express = require('express');
-const api = require('./routes/apiRoutes/index');
+const api = require('./routes/apiRoutes');
 const html = require('./routes/htmlRoutes');
 const fs = require('fs');
 const path = require('path');
