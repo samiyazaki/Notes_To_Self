@@ -1,7 +1,8 @@
 const express = require('express');
-const api = require('./routes/index');
-const html = require('./routes/html')
-
+const api = require('./routes/apiRoutes/index');
+const html = require('./routes/htmlRoutes/inex');
+const fs = require('fs');
+const path = require('path');
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -12,14 +13,7 @@ app.use('/api', api);
 app.use('/', html);
 app.use(express.static('public'));
 
-app.get('/', (req, res) =>
-    res.sendFile(path.join(_dirname, '/public/index.html'))
-);
-
-app.get('/notes', (req, res) =>
-    res.sendFile(path.join(_dirname, '/public/notes.html'))
-);
 
 app.listen(PORT, () =>
-    console.log('App listening at http://localhost:${PORT} 🚀')
+    console.log(`App listening at http://localhost:${PORT} 🚀`)
 );
