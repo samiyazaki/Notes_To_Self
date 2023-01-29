@@ -1,6 +1,6 @@
 const express = require('express');
 const api = require('./routes/apiRoutes/index');
-const html = require('./routes/htmlRoutes/inex');
+const html = require('./routes/htmlRoutes');
 const fs = require('fs');
 const path = require('path');
 const PORT = process.env.PORT || 3001;
@@ -14,6 +14,6 @@ app.use('/', html);
 app.use(express.static('public'));
 
 
-app.listen(PORT, () =>
+app.listen(PORT, () => {
     console.log(`App listening at http://localhost:${PORT} 🚀`)
-);
+});
